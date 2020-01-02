@@ -2,10 +2,10 @@
 
 namespace Antriver\LaravelNotificationUtils\Notifications\Channels;
 
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Notifications\Notifiable;
 use Antriver\LaravelNotificationUtils\Notifications\AbstractLaravelNotification;
 use Antriver\LaravelNotificationUtils\Repositories\CustomDatabaseNotificationRepository;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
 
 /**
  * Used instead of the Laravel's built in database channel, to make things more flexible.

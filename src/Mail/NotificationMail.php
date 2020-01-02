@@ -2,7 +2,7 @@
 
 namespace Antriver\LaravelNotificationUtils\Mail;
 
-use Tmd\LaravelSite\Mail\Base\ExtendedMailable;
+use Antriver\LaravelSiteUtils\Mail\Base\ExtendedMailable;
 
 class NotificationMail extends ExtendedMailable
 {

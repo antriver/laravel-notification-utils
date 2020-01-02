@@ -2,12 +2,12 @@
 
 namespace Antriver\LaravelNotificationUtils\Notifications;
 
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Notifications\Notification;
 use Antriver\LaravelNotificationUtils\Mail\NotificationMail;
 use Antriver\LaravelNotificationUtils\Models\CustomDatabaseNotification;
 use Antriver\LaravelNotificationUtils\Notifications\Channels\CustomDatabaseNotificationChannel;
-use Tmd\LaravelSite\Models\User;
+use Antriver\LaravelSiteUtils\Models\User;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Notifications\Notification;
 
 /**
  * Note we don't use ShouldQueue because all these notifications are generated

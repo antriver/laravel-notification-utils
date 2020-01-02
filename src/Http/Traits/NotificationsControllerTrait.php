@@ -2,11 +2,11 @@
 
 namespace Antriver\LaravelNotificationUtils\Http\Traits;
 
-use Illuminate\Http\Request;
 use Antriver\LaravelNotificationUtils\ModelCollections\NotificationCollectionFactory;
 use Antriver\LaravelNotificationUtils\Models\CustomDatabaseNotification;
 use Antriver\LaravelNotificationUtils\Repositories\CustomDatabaseNotificationRepository;
-use Tmd\LaravelSite\ModelPresenters\Base\ModelPresenterInterface;
+use Antriver\LaravelSiteUtils\ModelPresenters\Base\ModelPresenterInterface;
+use Illuminate\Http\Request;
 
 trait NotificationsControllerTrait
 {
@@ -50,7 +50,7 @@ trait NotificationsControllerTrait
         Request $request,
         NotificationCollectionFactory $notificationCollectionFactory
     ) {
-        list($count, $collections) = $notificationCollectionFactory->getCollectionsForUser(
+        [$count, $collections] = $notificationCollectionFactory->getCollectionsForUser(
             $this->getRequestUser($request)
         );
 

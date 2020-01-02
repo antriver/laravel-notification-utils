@@ -4,7 +4,7 @@ namespace Antriver\LaravelNotificationUtils\ModelCollections;
 
 use Antriver\LaravelNotificationUtils\Models\CustomDatabaseNotification;
 use Antriver\LaravelNotificationUtils\Repositories\CustomDatabaseNotificationRepository;
-use Tmd\LaravelSite\Models\User;
+use Antriver\LaravelSiteUtils\Models\User;
 
 class NotificationCollectionFactory
 {

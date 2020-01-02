@@ -2,12 +2,12 @@
 
 namespace Antriver\LaravelNotificationUtils\ModelPresenters\Traits;
 
-use Lang;
 use Antriver\LaravelNotificationUtils\Models\CustomDatabaseNotification;
 use Antriver\LaravelNotificationUtils\Repositories\CustomDatabaseNotificationRepository;
-use Tmd\LaravelSite\Libraries\LanguageHelpers;
-use Tmd\LaravelSite\Models\User;
-use Tmd\LaravelSite\Repositories\UserRepository;
+use Antriver\LaravelSiteUtils\Libraries\LanguageHelpers;
+use Antriver\LaravelSiteUtils\Models\User;
+use Antriver\LaravelSiteUtils\Repositories\UserRepository;
+use Lang;
 
 /**
  * Provides some base methods that can be used for converting a CustomDatabaseNotification to something

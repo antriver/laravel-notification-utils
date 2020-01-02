@@ -2,8 +2,8 @@
 
 namespace Antriver\LaravelNotificationUtils\ModelCollections;
 
-use Carbon\Carbon;
 use Antriver\LaravelNotificationUtils\Models\CustomDatabaseNotification;
+use Carbon\Carbon;
 
 class NotificationCollection
 {

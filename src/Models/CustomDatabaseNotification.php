@@ -2,16 +2,9 @@
 
 namespace Antriver\LaravelNotificationUtils\Models;
 
-use Auth;
-use Lang;
 use Antriver\LaravelNotificationUtils\Types\NotificationTypes;
-use Tmd\LaravelSite\Libraries\LanguageHelpers;
-use Tmd\LaravelSite\Models\Base\AbstractModel;
-use Tmd\LaravelSite\Models\Interfaces\BelongsToUserInterface;
-use Tmd\LaravelSite\Models\Traits\BelongsToUserTrait;
-use Tmd\LaravelSite\Models\Traits\CreatedAtWithoutUpdatedAtTrait;
-use Tmd\LaravelSite\Models\User;
-use Tmd\LaravelSite\Repositories\UserRepository;
+use Antriver\LaravelSiteUtils\Models\Base\AbstractModel;
+use Antriver\LaravelSiteUtils\Models\User;
 
 /**
  * Antriver\LaravelNotificationUtils\Models\CustomDatabaseNotification
@@ -23,29 +16,15 @@ use Tmd\LaravelSite\Repositories\UserRepository;
  * @property string|null $text
  * @property \Carbon\Carbon $createdAt
  * @property string|null $seenAt
- * @method static \Illuminate\Database\Eloquent\Builder|\Antriver\LaravelNotificationUtils\Models\CustomDatabaseNotification
- *     unseen()
- * @method static \Illuminate\Database\Eloquent\Builder|\Antriver\LaravelNotificationUtils\Models\CustomDatabaseNotification
- *     whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\Antriver\LaravelNotificationUtils\Models\CustomDatabaseNotification
- *     whereForUserId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\Antriver\LaravelNotificationUtils\Models\CustomDatabaseNotification
- *     whereFromUserId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\Antriver\LaravelNotificationUtils\Models\CustomDatabaseNotification
- *     whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\Antriver\LaravelNotificationUtils\Models\CustomDatabaseNotification
- *     whereSeenAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\Antriver\LaravelNotificationUtils\Models\CustomDatabaseNotification
- *     whereText($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\Antriver\LaravelNotificationUtils\Models\CustomDatabaseNotification
- *     whereType($value)
  * @mixin \Eloquent
  */
-class CustomDatabaseNotification extends AbstractModel implements BelongsToUserInterface
+class CustomDatabaseNotification extends AbstractModel implements CustomDatabaseNotificationInterface
 {
-    use BelongsToUserTrait;
-    use CreatedAtWithoutUpdatedAtTrait;
+    use CustomDatabaseNotificationTrait;
 
+    /**
+     * @var string
+     */
     protected $table = 'notifications';
 
     /**
@@ -97,7 +76,7 @@ class CustomDatabaseNotification extends AbstractModel implements BelongsToUserI
      *
      * @return array
      */
-    public function getFromUserIds()
+    public function getFromUserIds(): array
     {
         if (!is_null($this->fromUserIds)) {
             return $this->fromUserIds;
@@ -118,7 +97,7 @@ class CustomDatabaseNotification extends AbstractModel implements BelongsToUserI
      * Returns the number of notifications that were grouped together together into this one.
      * Populated by the COUNT() on the query in CustomDatabaseNotificationRepository.
      */
-    public function getGroupCount()
+    public function getGroupCount(): int
     {
         return isset($this->attributes['groupCount']) ? $this->attributes['groupCount'] : 1;
     }

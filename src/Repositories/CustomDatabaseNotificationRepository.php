@@ -2,12 +2,12 @@
 
 namespace Antriver\LaravelNotificationUtils\Repositories;
 
+use Antriver\LaravelNotificationUtils\Models\CustomDatabaseNotification;
+use Antriver\LaravelSiteUtils\Models\User;
 use Cache;
 use DB;
 use Illuminate\Database\Eloquent\Model as EloquentModel;
-use Antriver\LaravelNotificationUtils\Models\CustomDatabaseNotification;
 use Tmd\LaravelRepositories\Base\AbstractRepository;
-use Tmd\LaravelSite\Models\User;
 
 class CustomDatabaseNotificationRepository extends AbstractRepository
 {
