@@ -1,0 +1,19 @@
+{
+    "name": "antriver/laravel-notification-utils",
+    "description": "Helpers for sending/saving/loading notifications using Laravel's built-in notification function.",
+    "authors": [
+        {
+            "name": "Anthony Kuske",
+            "email": "anthonykuske@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Antriver\\LaravelNotificationUtils\\": "src/"
+        }
+    },
+    "require": {
+        "laravel/framework": "^5.4",
+        "tmd/laravel-repositories": "^2.0"
+    }
+}
