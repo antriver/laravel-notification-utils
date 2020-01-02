@@ -1,11 +1,14 @@
-## Notifications
+# Laravel Notification Utils
 
-See: https://laravel.com/docs/5.4/notifications
+See: https://laravel.com/docs/5.8/notifications
 
-A premade Notification template is provided as AbstractLaravelNotification. It provides methods to convert the notification to an email, or a "custom database notification".
+A bunch of stuff to help with using Laravel's built in notification function.
+
+## CustomDatabaseNotification
+An alternative channel for storing notifications in the database. Laravel provides a built-in 'database' channel but it simply JSON encodes everything. This channel instead lets you have a custom table structure and model for the notification.
 
 ### CustomDatabaseNotificationChannel
-A Laravel notification channel for sending notifications on that stores in the database. This is a much more flexible approach than using the built-in database channel, as that will just JSON-encode the Notification and store that.
+A Laravel notification channel for sending notifications on that stores in the database.
  
 ### CustomDatabaseNotificationModel 
 When a Notification is converted to a model to send via the CustomDatabaseNotificationChannel, it becomes this CustomDatabaseNotificationModel.
@@ -19,4 +22,3 @@ Technically there is nothing different between this and SingleCustomDatabaseNoti
 
 ### CustomDatabaseNotificationRepository
 Handles saving and retrieving this CustomDatabaseNotificationModels.
-
