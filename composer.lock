@@ -4,8 +4,80 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ac04dde07b7bb9ad27f4c0fe16f35052",
+    "content-hash": "df9d3e7d5640c25cfa9cca5ea25f138a",
     "packages": [
+        {
+            "name": "antriver/laravel-database-session-auth",
+            "version": "2.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/antriver/laravel-database-session-auth.git",
+                "reference": "6701c89dac525df61e00764f404c27a9a648fb16"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/antriver/laravel-database-session-auth/zipball/6701c89dac525df61e00764f404c27a9a648fb16",
+                "reference": "6701c89dac525df61e00764f404c27a9a648fb16",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^5.6"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Antriver\\LaravelDatabaseSessionAuth\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Anthony Kuske",
+                    "email": "anthonykuske@gmail.com"
+                }
+            ],
+            "description": "Laravel auth guard that stores a session token in the database.",
+            "time": "2020-01-03T00:11:01+00:00"
+        },
+        {
+            "name": "antriver/laravel-model-presenters",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/antriver/laravel-model-presenters.git",
+                "reference": "5b3d5722e7fd85873d486aebe906211c58f14fff"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/antriver/laravel-model-presenters/zipball/5b3d5722e7fd85873d486aebe906211c58f14fff",
+                "reference": "5b3d5722e7fd85873d486aebe906211c58f14fff",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "5.*.*",
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Antriver\\LaravelModelPresenters\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Anthony Kuske",
+                    "homepage": "https://anthonykuske.com"
+                }
+            ],
+            "time": "2020-01-04T01:57:28+00:00"
+        },
         {
             "name": "antriver/laravel-simple-message-trait",
             "version": "5.8.15",
@@ -42,20 +114,22 @@
             "time": "2019-05-06T13:53:53+00:00"
         },
         {
-            "name": "antriver/laravel-site-utils",
+            "name": "antriver/laravel-site-scaffolding",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/antriver/laravel-site-utils.git",
-                "reference": "60d4a0cd60f4a67f706a2ccdf44fdc99aa490145"
+                "url": "https://github.com/antriver/laravel-site-scaffolding.git",
+                "reference": "06490ffbc802caf1986fbebe5734a1563aa7daeb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/antriver/laravel-site-utils/zipball/60d4a0cd60f4a67f706a2ccdf44fdc99aa490145",
-                "reference": "60d4a0cd60f4a67f706a2ccdf44fdc99aa490145",
+                "url": "https://api.github.com/repos/antriver/laravel-site-scaffolding/zipball/06490ffbc802caf1986fbebe5734a1563aa7daeb",
+                "reference": "06490ffbc802caf1986fbebe5734a1563aa7daeb",
                 "shasum": ""
             },
             "require": {
+                "antriver/laravel-database-session-auth": "^2.0",
+                "antriver/laravel-model-presenters": "^1.0",
                 "antriver/laravel-simple-message-trait": "^5.8",
                 "google/recaptcha": "^1.2",
                 "intervention/image": "^2.5",
@@ -73,21 +147,26 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Antriver\\LaravelSiteUtils\\": "src/"
+                    "Antriver\\LaravelSiteScaffolding\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Antriver\\LaravelSiteScaffoldingTests\\": "tests/"
                 }
             },
             "authors": [
                 {
                     "name": "Anthony Kuske",
-                    "email": "anthonykuske@gmail.com"
+                    "homepage": "https://anthonykuske.com"
                 }
             ],
             "description": "A bunch of stuff to reduce duplication between Laravel apps.",
             "support": {
-                "source": "https://github.com/antriver/laravel-site-utils/tree/master",
-                "issues": "https://github.com/antriver/laravel-site-utils/issues"
+                "source": "https://github.com/antriver/laravel-site-scaffolding/tree/master",
+                "issues": "https://github.com/antriver/laravel-site-scaffolding/issues"
             },
-            "time": "2020-01-02T21:19:56+00:00"
+            "time": "2020-01-04T02:30:20+00:00"
         },
         {
             "name": "aws/aws-sdk-php",
@@ -3515,7 +3594,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "antriver/laravel-site-utils": 20
+        "antriver/laravel-site-scaffolding": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
