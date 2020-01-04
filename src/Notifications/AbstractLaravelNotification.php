@@ -5,7 +5,7 @@ namespace Antriver\LaravelNotificationUtils\Notifications;
 use Antriver\LaravelNotificationUtils\Mail\NotificationMail;
 use Antriver\LaravelNotificationUtils\Models\CustomDatabaseNotification;
 use Antriver\LaravelNotificationUtils\Notifications\Channels\CustomDatabaseNotificationChannel;
-use Antriver\LaravelSiteUtils\Models\User;
+use Antriver\LaravelSiteScaffolding\Models\User;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Notifications\Notification;
 

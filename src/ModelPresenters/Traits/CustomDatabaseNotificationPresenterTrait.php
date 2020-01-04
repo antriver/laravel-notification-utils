@@ -4,9 +4,9 @@ namespace Antriver\LaravelNotificationUtils\ModelPresenters\Traits;
 
 use Antriver\LaravelNotificationUtils\Models\CustomDatabaseNotification;
 use Antriver\LaravelNotificationUtils\Repositories\CustomDatabaseNotificationRepository;
-use Antriver\LaravelSiteUtils\Libraries\LanguageHelpers;
-use Antriver\LaravelSiteUtils\Models\User;
-use Antriver\LaravelSiteUtils\Repositories\UserRepository;
+use Antriver\LaravelSiteScaffolding\Lang\LanguageHelpers;
+use Antriver\LaravelSiteScaffolding\Users\User;
+use Antriver\LaravelSiteScaffolding\Users\UserRepository;
 use Lang;
 
 /**

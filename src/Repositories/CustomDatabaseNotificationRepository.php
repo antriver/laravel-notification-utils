@@ -3,7 +3,7 @@
 namespace Antriver\LaravelNotificationUtils\Repositories;
 
 use Antriver\LaravelNotificationUtils\Models\CustomDatabaseNotification;
-use Antriver\LaravelSiteUtils\Models\User;
+use Antriver\LaravelSiteScaffolding\Models\User;
 use Cache;
 use DB;
 use Illuminate\Database\Eloquent\Model as EloquentModel;
