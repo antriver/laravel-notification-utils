@@ -2,11 +2,11 @@
 
 namespace Antriver\LaravelNotificationUtils\Notifications;
 
+use Antriver\LaravelNotificationUtils\Interfaces\NotifiableInterface;
 use Antriver\LaravelNotificationUtils\Mail\NotificationMail;
 use Antriver\LaravelNotificationUtils\Models\CustomDatabaseNotification;
-use Antriver\LaravelNotificationUtils\Notifications\Channels\CustomDatabaseNotificationChannel;
-use Antriver\LaravelSiteScaffolding\Models\User;
-use Illuminate\Notifications\Notifiable;
+use Antriver\LaravelNotificationUtils\NotificationChannels\CustomDatabaseNotificationChannel;
+use Antriver\LaravelSiteScaffolding\Users\User;
 use Illuminate\Notifications\Notification;
 
 /**
@@ -72,11 +72,11 @@ abstract class AbstractLaravelNotification extends Notification
      * Convert the Notification to a model to be stored in the database.
      * This is called by the CustomDatabaseNotificationChannel when "sending" (saving) the notification.
      *
-     * @param Notifiable $notifiable
+     * @param NotifiableInterface $notifiable
      *
      * @return CustomDatabaseNotification
      */
-    public function toCustomDatabaseNotificationModel(Notifiable $notifiable)
+    public function toCustomDatabaseNotificationModel(NotifiableInterface $notifiable)
     {
         return new CustomDatabaseNotification($this->toArray($notifiable));
     }
@@ -84,7 +84,7 @@ abstract class AbstractLaravelNotification extends Notification
     /**
      * Get the array representation of the notification.
      *
-     * @param Notifiable $notifiable
+     * @param NotifiableInterface $notifiable
      *
      * @return array
      */
@@ -94,7 +94,7 @@ abstract class AbstractLaravelNotification extends Notification
 
         return [
             'type' => $this->getType(),
-            'forUserId' => $notifiable->id,
+            'forUserId' => $notifiable->getKey(),
             'fromUserId' => $fromUser ? $fromUser->id : null,
         ];
     }

@@ -126,11 +126,9 @@ trait CustomDatabaseNotificationPresenterTrait
      */
     protected function getTextParameters(CustomDatabaseNotification $notification)
     {
-        $parameters = [
+        return [
             'usernames' => $this->getFromUsernamesString($notification),
         ];
-
-        return $parameters;
     }
 
     /**
@@ -173,20 +171,18 @@ trait CustomDatabaseNotificationPresenterTrait
      * @param CustomDatabaseNotification $notification
      * @param int $limit
      *
-     * @return \string[]
+     * @return string[]
      */
     protected function getFromUsernames(CustomDatabaseNotification $notification, $limit = null)
     {
         $fromUsers = $this->getFromUsers($notification, $limit);
 
-        $usernames = array_map(
+        return array_map(
             function (User $user) {
                 return $user->username;
             },
             $fromUsers
         );
-
-        return $usernames;
     }
 
     /**

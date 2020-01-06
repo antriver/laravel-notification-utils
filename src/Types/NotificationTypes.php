@@ -14,9 +14,7 @@ class NotificationTypes
      */
     public static function getAll()
     {
-        $types = (new ReflectionClass(get_called_class()))->getConstants();
-
-        return $types;
+        return (new ReflectionClass(get_called_class()))->getConstants();
     }
 
     /**

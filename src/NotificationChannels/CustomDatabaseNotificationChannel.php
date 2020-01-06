@@ -1,11 +1,10 @@
 <?php
 
-namespace Antriver\LaravelNotificationUtils\Notifications\Channels;
+namespace Antriver\LaravelNotificationUtils\NotificationChannels;
 
+use Antriver\LaravelNotificationUtils\Interfaces\NotifiableInterface;
 use Antriver\LaravelNotificationUtils\Notifications\AbstractLaravelNotification;
 use Antriver\LaravelNotificationUtils\Repositories\CustomDatabaseNotificationRepository;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Notifications\Notifiable;
 
 /**
  * Used instead of the Laravel's built in database channel, to make things more flexible.
@@ -17,11 +16,11 @@ class CustomDatabaseNotificationChannel
     /**
      * Send the given notification.
      *
-     * @param Notifiable|Model $notifiable
+     * @param NotifiableInterface $notifiable
      * @param AbstractLaravelNotification $notification
      */
     public function send(
-        Notifiable $notifiable,
+        NotifiableInterface $notifiable,
         AbstractLaravelNotification $notification
     ) {
         $model = $notification->toCustomDatabaseNotificationModel($notifiable);

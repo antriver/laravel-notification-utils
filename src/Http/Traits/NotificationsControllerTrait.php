@@ -2,10 +2,10 @@
 
 namespace Antriver\LaravelNotificationUtils\Http\Traits;
 
+use Antriver\LaravelModelPresenters\ModelPresenterInterface;
 use Antriver\LaravelNotificationUtils\ModelCollections\NotificationCollectionFactory;
 use Antriver\LaravelNotificationUtils\Models\CustomDatabaseNotification;
 use Antriver\LaravelNotificationUtils\Repositories\CustomDatabaseNotificationRepository;
-use Antriver\LaravelSiteScaffolding\ModelPresenters\Base\ModelPresenterInterface;
 use Illuminate\Http\Request;
 
 trait NotificationsControllerTrait

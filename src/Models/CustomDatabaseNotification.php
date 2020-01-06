@@ -4,7 +4,7 @@ namespace Antriver\LaravelNotificationUtils\Models;
 
 use Antriver\LaravelNotificationUtils\Types\NotificationTypes;
 use Antriver\LaravelSiteScaffolding\Models\Base\AbstractModel;
-use Antriver\LaravelSiteScaffolding\Models\User;
+use Antriver\LaravelSiteScaffolding\Users\User;
 
 /**
  * Antriver\LaravelNotificationUtils\Models\CustomDatabaseNotification

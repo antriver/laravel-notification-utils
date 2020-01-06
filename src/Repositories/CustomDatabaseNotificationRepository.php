@@ -3,7 +3,7 @@
 namespace Antriver\LaravelNotificationUtils\Repositories;
 
 use Antriver\LaravelNotificationUtils\Models\CustomDatabaseNotification;
-use Antriver\LaravelSiteScaffolding\Models\User;
+use Antriver\LaravelSiteScaffolding\Users\User;
 use Cache;
 use DB;
 use Illuminate\Database\Eloquent\Model as EloquentModel;
@@ -106,7 +106,7 @@ class CustomDatabaseNotificationRepository extends AbstractRepository
         $sql .= " GROUP BY n.forUserId";
 
         $modelClass = $this->getModelClass();
-        $notifications = $modelClass::hydrateRaw($sql, $bindings);
+        $notifications = $modelClass::fromQuery($sql, $bindings);
 
         return $notifications[0];
     }
