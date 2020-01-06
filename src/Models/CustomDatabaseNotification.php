@@ -4,6 +4,7 @@ namespace Antriver\LaravelNotificationUtils\Models;
 
 use Antriver\LaravelNotificationUtils\Types\NotificationTypes;
 use Antriver\LaravelSiteScaffolding\Models\Base\AbstractModel;
+use Antriver\LaravelSiteScaffolding\Models\Traits\CreatedAtWithoutUpdatedAtTrait;
 use Antriver\LaravelSiteScaffolding\Users\User;
 
 /**
@@ -20,6 +21,7 @@ use Antriver\LaravelSiteScaffolding\Users\User;
  */
 class CustomDatabaseNotification extends AbstractModel implements CustomDatabaseNotificationInterface
 {
+    use CreatedAtWithoutUpdatedAtTrait;
     use CustomDatabaseNotificationTrait;
 
     /**
